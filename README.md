@@ -1,5 +1,7 @@
 # GitHubLastChangeWidget
 
+[![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
+
 ## Embed with support for color scheme preference
 
 ### GitHub-flavoured Markdown
