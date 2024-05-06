@@ -34,3 +34,5 @@
 - [Specifying the theme an image is shown to](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#specifying-the-theme-an-image-is-shown-to)
 - [Light and dark mode](https://squidfunk.github.io/mkdocs-material/reference/images/#light-and-dark-mode)
 - [C# Pretty Date Format (Hours or Minutes Ago)](https://thedeveloperblog.com/c-sharp/pretty-date)
+- [VectSharp: a light library for C# vector graphics](https://giorgiobianchini.com/VectSharp/)
+- [Octokit - GitHub API Client Library for .NET](https://github.com/octokit/octokit.net)
