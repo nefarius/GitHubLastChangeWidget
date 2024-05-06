@@ -7,7 +7,7 @@ using Nefarius.Utilities.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args).Setup();
 
-builder.Services.AddFastEndpoints().SwaggerDocument();
+builder.Services.AddFastEndpoints().SwaggerDocument(o => o.RemoveEmptyRequestSchema = true);
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<GitHubApiService>();
 
