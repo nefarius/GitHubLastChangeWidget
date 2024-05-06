@@ -124,7 +124,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
         // Repository is private or failed to load commits
         if (recentCommits is null || !recentCommits.Any())
         {
-            Page pageNotFound = new(400, 50);
+            Page pageNotFound = new(400, 25);
             Graphics graphics = pageNotFound.Graphics;
 
             FontFamily family = FontFamily.ResolveFontFamily(FontFamily.StandardFontFamilies.Helvetica);
