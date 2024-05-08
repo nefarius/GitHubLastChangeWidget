@@ -4,6 +4,22 @@
 
 WIP 🔥
 
+## Features
+
+- Generates an SVG summary of the recent commit activity for a GitHub repository
+- In-memory caching of GitHub API responses for an hour to not trigger rate limits
+    - Optional [personal access token (classic)](https://github.com/settings/tokens) can be configured (`GitHub:Token`)
+      to overcome GitHub API rate limits
+- Customization of basic attributes via [query parameters](https://ghstats.api.nefarius.systems/swagger)
+- Light and dark mode color schemes can be configured
+  client-side ([see examples](#embed-with-support-for-color-scheme-preference))
+
+## Limitations
+
+- Private repositories are not supported for security reasons
+- Date rendering is done server-side so the Browser local time can not be taken into consideration (all dates are in
+  UTC)
+
 ## Demo
 
 <picture>
