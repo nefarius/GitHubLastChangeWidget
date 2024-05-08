@@ -17,10 +17,14 @@ WIP 🔥
 ### GitHub-flavoured Markdown
 
 ```html
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest?foregroundColour=%23C4D1DE">
-  <source media="(prefers-color-scheme: light)" srcset="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest">
-  <img alt="Repository activity" src="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest">
+    <source media="(prefers-color-scheme: dark)"
+            srcset="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest?foregroundColour=%23C4D1DE">
+    <source media="(prefers-color-scheme: light)"
+            srcset="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest">
+    <img alt="Repository activity"
+         src="https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest">
 </picture>
 ```
 
@@ -30,6 +34,22 @@ WIP 🔥
 ![Repository activity](https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest#only-light)
 ![Repository activity](https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest?foregroundColour=%23b5b3b0#only-dark)
 ```
+
+## Public instance
+
+I'm hosting an instance of this project
+at [`https://ghstats.api.nefarius.systems/`](https://ghstats.api.nefarius.systems/) which you can
+consume:
+
+```text
+https://ghstats.api.nefarius.systems/widgets/github/{username}}/{repository}/changes/latest
+```
+
+Like any other of my public web services it only logs an absolute minimal amount required for debugging purposes and
+I'll never sell your data out to the big bois 😉
+
+If you like this idea and want to keep my public instance happy, up and
+running [consider making a donation](https://docs.nefarius.at/Community-Support/) 💸
 
 ## Resources
 
