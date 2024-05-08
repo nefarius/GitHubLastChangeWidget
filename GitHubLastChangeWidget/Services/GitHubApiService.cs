@@ -43,10 +43,41 @@ internal sealed class GitHubApiService
             }
         }
 
-        Repository? repository = await _gitHubClient.Repository.Get(owner, name);
         List<GitHubCommit> empty = Enumerable.Empty<GitHubCommit>().ToList();
 
-        if (repository.Private)
+        try
+        {
+            Repository? repository = await _gitHubClient.Repository.Get(owner, name);
+
+            if (repository.Private)
+            {
+                if (!_environment.IsDevelopment())
+                {
+                    _memoryCache.Set(
+                        key,
+                        empty,
+                        new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1) }
+                    );
+                }
+
+                return empty;
+            }
+
+            IReadOnlyList<GitHubCommit>? recentCommits = await _gitHubClient.Repository.Commit.GetAll(owner, name,
+                new ApiOptions { StartPage = 1, PageCount = 1, PageSize = maxCount });
+
+            if (!_environment.IsDevelopment())
+            {
+                _memoryCache.Set(
+                    key,
+                    recentCommits.ToList(),
+                    new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1) }
+                );
+            }
+
+            return recentCommits;
+        }
+        catch (NotFoundException)
         {
             if (!_environment.IsDevelopment())
             {
@@ -59,20 +90,6 @@ internal sealed class GitHubApiService
 
             return empty;
         }
-
-        IReadOnlyList<GitHubCommit>? recentCommits = await _gitHubClient.Repository.Commit.GetAll(owner, name,
-            new ApiOptions { StartPage = 1, PageCount = 1, PageSize = maxCount });
-
-        if (!_environment.IsDevelopment())
-        {
-            _memoryCache.Set(
-                key,
-                recentCommits.ToList(),
-                new MemoryCacheEntryOptions { AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1) }
-            );
-        }
-
-        return recentCommits;
     }
 
     public async Task<IReadOnlyList<Activity>?> GetRecentActivityEvents(string owner, string name, int maxCount = 5)
