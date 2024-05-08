@@ -2,7 +2,7 @@
 
 [![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
 
-WIP 🔥
+Webservice that generates an SVG of latest GitHub repository activity.
 
 ## Features
 
