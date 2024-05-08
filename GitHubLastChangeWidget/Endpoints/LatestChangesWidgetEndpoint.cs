@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 
 using FastEndpoints;
 
+using FluentValidation;
+
 using GitHubLastChangeWidget.Services;
 
 using Microsoft.Extensions.Primitives;
@@ -54,6 +56,24 @@ internal sealed class LatestChangesWidgetEndpointRequest
     ///     The rendered page width.
     /// </summary>
     public double? Width { get; set; } = 830;
+}
+
+internal sealed class LatestChangesWidgetEndpointRequestValidator : Validator<LatestChangesWidgetEndpointRequest>
+{
+    public LatestChangesWidgetEndpointRequestValidator()
+    {
+        RuleFor(x => x.Username)
+            .NotEmpty()
+            .MinimumLength(1)
+            .MaximumLength(39)
+            .WithMessage("Please specify a GitHub username or organisation name!");
+        
+        RuleFor(x => x.Repository)
+            .NotEmpty()
+            .MinimumLength(1)
+            .MaximumLength(100)
+            .WithMessage("Please specify a public GitHub repository name!");
+    }
 }
 
 /// <summary>
