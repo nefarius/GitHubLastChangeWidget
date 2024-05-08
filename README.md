@@ -42,7 +42,7 @@ at [`https://ghstats.api.nefarius.systems/`](https://ghstats.api.nefarius.system
 consume:
 
 ```text
-https://ghstats.api.nefarius.systems/widgets/github/{username}}/{repository}/changes/latest
+https://ghstats.api.nefarius.systems/widgets/github/{username}/{repository}/changes/latest
 ```
 
 Like any other of my public web services it only logs an absolute minimal amount required for debugging purposes and
