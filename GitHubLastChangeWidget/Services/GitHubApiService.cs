@@ -33,7 +33,7 @@ internal sealed class GitHubApiService
 
     public async Task<IReadOnlyList<GitHubCommit>?> GetRecentPublicCommits(string owner, string name, int maxCount = 5)
     {
-        string key = $"{nameof(GitHubApiService)}-commits-{owner}/{name}";
+        string key = $"{nameof(GitHubApiService)}-commits-{owner}/{name}+{maxCount}";
 
         if (!_environment.IsDevelopment())
         {

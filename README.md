@@ -19,6 +19,8 @@ Webservice that generates an SVG of latest GitHub repository activity.
 - Private repositories are not supported for security reasons
 - Date rendering is done server-side so the Browser local time can not be taken into consideration (all dates are in
   UTC)
+- Integration into responsive designs will not work properly since the server lacks information if it got fetched for
+  Desktop, Tablet, Smartphone etc.
 
 ## Demo
 

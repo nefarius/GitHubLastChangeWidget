@@ -56,6 +56,11 @@ internal sealed class LatestChangesWidgetEndpointRequest
     ///     The rendered page width.
     /// </summary>
     public double? Width { get; set; } = 830;
+
+    /// <summary>
+    ///     The maximum amount of commits to include in the table. Valid values include 1 to 50.
+    /// </summary>
+    public int? MaxCommits { get; set; } = 5;
 }
 
 internal sealed class LatestChangesWidgetEndpointRequestValidator : Validator<LatestChangesWidgetEndpointRequest>
@@ -67,12 +72,16 @@ internal sealed class LatestChangesWidgetEndpointRequestValidator : Validator<La
             .MinimumLength(1)
             .MaximumLength(39)
             .WithMessage("Please specify a GitHub username or organisation name!");
-        
+
         RuleFor(x => x.Repository)
             .NotEmpty()
             .MinimumLength(1)
             .MaximumLength(100)
             .WithMessage("Please specify a public GitHub repository name!");
+
+        RuleFor(x => x.MaxCommits)
+            .InclusiveBetween(1, 50)
+            .WithMessage("Allowed values include 1 to 50.");
     }
 }
 
@@ -133,13 +142,13 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
     {
         DateTimeOffset now = DateTimeOffset.UtcNow;
         using MemoryStream responseStream = new();
-        const int commitsLimit = 5;
+        int commitsLimit = req.MaxCommits!.Value;
         const int expiresSeconds = 60;
 
         Colour foregroundColor = Colour.FromCSSString(req.ForegroundColour) ?? Colours.Black;
 
         IReadOnlyList<GitHubCommit>? recentCommits =
-            await gitHubApiService.GetRecentPublicCommits(req.Username, req.Repository);
+            await gitHubApiService.GetRecentPublicCommits(req.Username, req.Repository, commitsLimit);
 
         // Repository is private or failed to load commits
         if (recentCommits is null || !recentCommits.Any())
@@ -177,6 +186,10 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
             commitsTable.AppendLine($"| {date} | {message}  |");
         }
 
+        string commitsSnippet = commitsLimit == 1
+            ? "one commit"
+            : $"{commitsLimit} commits";
+
         string markdownSource = $"""
                                  ## Last change
 
@@ -184,7 +197,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
 
                                  ## Recent commits
 
-                                 Limiting to last {commitsLimit} commits:
+                                 Limiting to last {commitsSnippet}:
 
                                  {commitsTable}
 
