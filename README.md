@@ -1,6 +1,7 @@
 # GitHubLastChangeWidget
 
-[![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
+[![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml) 
+[![Static Badge](https://img.shields.io/badge/Open-Swagger-lightgreen)](https://ghstats.api.nefarius.systems/swagger/)
 
 Webservice that generates an SVG of latest GitHub repository activity.
 
