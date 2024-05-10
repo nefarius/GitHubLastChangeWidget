@@ -1,6 +1,6 @@
 # GitHubLastChangeWidget
 
-[![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml) 
+[![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
 [![Static Badge](https://img.shields.io/badge/Open-Swagger-lightgreen)](https://ghstats.api.nefarius.systems/swagger/)
 
 Webservice that generates an SVG of latest GitHub repository activity.
@@ -35,6 +35,10 @@ Webservice that generates an SVG of latest GitHub repository activity.
 
 ### GitHub-flavoured Markdown
 
+Insert [this snippet](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#specifying-the-theme-an-image-is-shown-to)
+into your `README.md`; the first URL will be used when the page is in dark mode, the 2nd for light
+and the 3rd is the fallback URL if detection didn't result in success:
+
 ```html
 
 <picture>
@@ -48,6 +52,11 @@ Webservice that generates an SVG of latest GitHub repository activity.
 ```
 
 ### Material for MkDocs
+
+If you added
+a [color palette toggle](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle)
+and want to show different images for light and dark color schemes, you can append a `#only-light` or `#only-dark` hash
+fragment to the image URL:
 
 ```markdown
 ![Repository activity](https://ghstats.api.nefarius.systems/widgets/github/nefarius/GitHubLastChangeWidget/changes/latest#only-light)
@@ -72,8 +81,6 @@ running [consider making a donation](https://docs.nefarius.at/Community-Support/
 
 ## Resources
 
-- [Specifying the theme an image is shown to](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#specifying-the-theme-an-image-is-shown-to)
-- [Light and dark mode](https://squidfunk.github.io/mkdocs-material/reference/images/#light-and-dark-mode)
 - [C# Pretty Date Format (Hours or Minutes Ago)](https://thedeveloperblog.com/c-sharp/pretty-date)
 - [VectSharp: a light library for C# vector graphics](https://giorgiobianchini.com/VectSharp/)
 - [Octokit - GitHub API Client Library for .NET](https://github.com/octokit/octokit.net)
