@@ -8,6 +8,8 @@ using FluentValidation;
 
 using GitHubLastChangeWidget.Services;
 
+using Humanizer;
+
 using Microsoft.Extensions.Primitives;
 
 using Octokit;
@@ -183,7 +185,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
         {
             string? message = NewlineRegex().Replace(commit.Commit.Message, "<br>");
             string date = commit.Commit.Author.Date.ToString("s", CultureInfo.InvariantCulture);
-            commitsTable.AppendLine($"| {date} | {message}  |");
+            commitsTable.AppendLine($"| {date} | {message.Truncate(140)}  |");
         }
 
         string commitsSnippet = commitsLimit == 1
