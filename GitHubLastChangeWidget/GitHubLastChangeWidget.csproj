@@ -22,7 +22,7 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
         <PackageReference Include="VectSharp" Version="2.6.0"/>
         <PackageReference Include="VectSharp.Markdown" Version="1.5.0"/>
-        <PackageReference Include="VectSharp.SVG" Version="1.9.0"/>
+        <PackageReference Include="VectSharp.SVG" Version="1.10.1"/>
     </ItemGroup>
 
     <ItemGroup>
