@@ -178,14 +178,22 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
         DateTimeOffset lastChange = recentCommits[0].Commit.Committer.Date;
 
         StringBuilder commitsTable = new();
-        commitsTable.AppendLine("| Date | Message  |");
-        commitsTable.AppendLine("| --- | ---  |");
+        commitsTable.AppendLine(
+            """
+            +--------------------------+------------------------------------------------------------------------------------------------------+
+            | Date                     | Message                                                                                              |
+            +==========================+======================================================================================================+
+            """
+        );
 
         foreach (GitHubCommit commit in recentCommits)
         {
             string? message = NewlineRegex().Replace(commit.Commit.Message, "<br>");
-            string date = commit.Commit.Author.Date.ToString("s", CultureInfo.InvariantCulture);
-            commitsTable.AppendLine($"| {date} | {message.Truncate(140)}  |");
+            string date = commit.Commit.Author.Date.ToString("s", CultureInfo.InvariantCulture).Replace("T", " ");
+            commitsTable.AppendLine($"| {date}      | {message.Truncate(140)}");
+            commitsTable.AppendLine(
+                "+--------------------------+------------------------------------------------------------------------------------------------------+"
+            );
         }
 
         string commitsSnippet = commitsLimit == 1
