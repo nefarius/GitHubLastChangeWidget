@@ -211,7 +211,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
 
                                  {commitsTable}
 
-                                 This data is refreshed once per hour.
+                                 This data is refreshed once per hour. Timestamps are in UTC.
                                  """;
 
         Colour bgFallback = Colour.WithAlpha(Colours.White, 0 /* full transparency */);
