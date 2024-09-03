@@ -1,4 +1,4 @@
-# GitHubLastChangeWidget
+# <img src="assets/NSS-128x128.png" align="left" />GitHubLastChangeWidget
 
 [![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
 [![Static Badge](https://img.shields.io/badge/Open-Swagger-lightgreen)](https://ghstats.api.nefarius.systems/swagger/)
