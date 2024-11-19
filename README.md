@@ -3,7 +3,7 @@
 [![.NET](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml/badge.svg)](https://github.com/nefarius/GitHubLastChangeWidget/actions/workflows/build.yml)
 [![Static Badge](https://img.shields.io/badge/Open-Swagger-lightgreen)](https://ghstats.api.nefarius.systems/swagger/)
 
-Webservice that generates an SVG of latest GitHub repository activity.
+Web service that generates an SVG of latest GitHub repository activity.
 
 ## Features
 
@@ -74,7 +74,7 @@ https://ghstats.api.nefarius.systems/widgets/github/{username}/{repository}/chan
 ```
 
 Like any other of my public web services it only logs an absolute minimal amount required for debugging purposes and
-I'll never sell your data out to the big bois 😉
+I'll never sell your data out to the big boys 😉
 
 If you like this idea and want to keep my public instance happy, up and
 running [consider making a donation](https://docs.nefarius.at/Community-Support/) 💸
