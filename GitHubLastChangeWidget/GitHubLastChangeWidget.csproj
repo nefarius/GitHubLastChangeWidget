@@ -13,8 +13,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FastEndpoints" Version="5.34.0"/>
-        <PackageReference Include="FastEndpoints.Swagger" Version="5.34.0" />
+        <PackageReference Include="FastEndpoints" Version="5.35.0"/>
+        <PackageReference Include="FastEndpoints.Swagger" Version="5.35.0" />
         <PackageReference Include="Humanizer.Core" Version="2.14.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
         <PackageReference Include="Nefarius.Utilities.AspNetCore" Version="2.7.0"/>
