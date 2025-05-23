@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubLastChangeWidget", "GitHubLastChangeWidget\GitHubLastChangeWidget.csproj", "{B190F0A2-ACC8-4ABD-B4C5-C228F0CA8D98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubLastChangeWidget", "src\GitHubLastChangeWidget.csproj", "{B190F0A2-ACC8-4ABD-B4C5-C228F0CA8D98}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{958C2FBE-D2DE-43E1-AD24-89D4CF372636}"
 	ProjectSection(SolutionItems) = preProject
