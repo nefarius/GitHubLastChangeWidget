@@ -7,10 +7,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["GitHubLastChangeWidget/GitHubLastChangeWidget.csproj", "GitHubLastChangeWidget/"]
-RUN dotnet restore "GitHubLastChangeWidget/GitHubLastChangeWidget.csproj"
+COPY ["src/GitHubLastChangeWidget.csproj", "src/"]
+RUN dotnet restore "src/GitHubLastChangeWidget.csproj"
 COPY . .
-WORKDIR "/src/GitHubLastChangeWidget"
+WORKDIR "/src/src"
 RUN dotnet build "GitHubLastChangeWidget.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
