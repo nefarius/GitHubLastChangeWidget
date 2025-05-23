@@ -24,6 +24,9 @@ using StringBuilder = System.Text.StringBuilder;
 
 namespace GitHubLastChangeWidget.Endpoints;
 
+/// <summary>
+///     Request DTO for <see cref="LatestChangesWidgetEndpoint"/>.
+/// </summary>
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
 [SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")]
 [SuppressMessage("ReSharper", "AutoPropertyCanBeMadeGetOnly.Global")]
@@ -65,6 +68,9 @@ internal sealed class LatestChangesWidgetEndpointRequest
     public int? MaxCommits { get; set; } = 5;
 }
 
+/// <summary>
+///     Plausibility checks for <see cref="LatestChangesWidgetEndpointRequest"/>.
+/// </summary>
 internal sealed class LatestChangesWidgetEndpointRequestValidator : Validator<LatestChangesWidgetEndpointRequest>
 {
     public LatestChangesWidgetEndpointRequestValidator()
