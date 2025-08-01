@@ -177,7 +177,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
 
             SetCacheControl(expiresSeconds, now);
 
-            await SendStreamAsync(responseStream, contentType: "image/svg+xml", cancellation: ct);
+            await Send.StreamAsync(responseStream, contentType: "image/svg+xml", cancellation: ct);
             return;
         }
 
@@ -241,7 +241,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
 
         SetCacheControl(expiresSeconds, now);
 
-        await SendStreamAsync(responseStream, contentType: "image/svg+xml", cancellation: ct);
+        await Send.StreamAsync(responseStream, contentType: "image/svg+xml", cancellation: ct);
     }
 
     private void SetCacheControl(int expiresSeconds, DateTimeOffset now)
