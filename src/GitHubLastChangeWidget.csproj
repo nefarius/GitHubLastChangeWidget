@@ -19,7 +19,7 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.12" />
         <PackageReference Include="Nefarius.Utilities.AspNetCore" Version="2.8.1" />
         <PackageReference Include="Octokit" Version="14.0.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.2" />
         <PackageReference Include="VectSharp" Version="2.6.1" />
         <PackageReference Include="VectSharp.Markdown" Version="1.7.0"/>
         <PackageReference Include="VectSharp.SVG" Version="1.10.2"/>
