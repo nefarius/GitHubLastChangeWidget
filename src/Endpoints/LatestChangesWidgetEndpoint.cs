@@ -184,6 +184,7 @@ internal sealed partial class LatestChangesWidgetEndpoint(GitHubApiService gitHu
         DateTimeOffset lastChange = recentCommits[0].Commit.Committer.Date;
 
         StringBuilder commitsTable = new();
+        // we need to use this syntax so that we can control the column widths
         commitsTable.AppendLine(
             """
             +--------------------------+------------------------------------------------------------------------------------------------------+
