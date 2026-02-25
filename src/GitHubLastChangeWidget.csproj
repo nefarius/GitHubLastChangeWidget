@@ -4,7 +4,7 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>        
     </PropertyGroup>
 
     <PropertyGroup>
@@ -13,8 +13,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FastEndpoints" Version="7.2.0" />
-        <PackageReference Include="FastEndpoints.Swagger" Version="7.2.0" />
+        <PackageReference Include="FastEndpoints" Version="8.0.0" />
+        <PackageReference Include="FastEndpoints.Swagger" Version="8.0.0" />
         <PackageReference Include="Humanizer.Core" Version="3.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.13" />
         <PackageReference Include="Nefarius.Utilities.AspNetCore" Version="2.8.1" />
