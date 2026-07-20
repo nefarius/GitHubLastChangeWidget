@@ -16,7 +16,7 @@
         <PackageReference Include="FastEndpoints" Version="8.2.0" />
         <PackageReference Include="FastEndpoints.Swagger" Version="8.2.0" />
         <PackageReference Include="Humanizer.Core" Version="3.0.10" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.17" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.18" />
         <PackageReference Include="Nefarius.Utilities.AspNetCore" Version="2.9.0" />
         <PackageReference Include="Octokit" Version="14.0.0"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
